@@ -1,0 +1,16 @@
+.lazy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+
+  &__box {
+    width: 100%;
+    height: 21vw;
+    background-color: rgb(230, 225, 220);
+  }
+
+  &__row {
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+}

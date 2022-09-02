@@ -1,0 +1,47 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "ProjectName" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const headerMods = ""
+  - const hasFooter = false
+  - const footerMods = ""
+  - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    .container(data-scroll-section)
+      .lazy-grid
+        .lazy-grid__box
+        .lazy-grid__box(data-lazy-box="start")
+        .lazy-grid__box
+        .lazy-grid__box
+        .lazy-grid__row
+          h3.title.title--h3 Determine the goal
+        .lazy-grid__box
+        .lazy-grid__box
+        .lazy-grid__box
+        .lazy-grid__box(data-lazy-box)
+        .lazy-grid__row
+          h3.title.title--h3.title--right Choose the appropriate<br>testing method
+        .lazy-grid__box(data-lazy-box)
+        .lazy-grid__box
+        .lazy-grid__box
+        .lazy-grid__box
+        .lazy-grid__row
+          h3.title.title--h3 Formulate tasks for users
+        .lazy-grid__box
+        .lazy-grid__box
+        .lazy-grid__box
+        .lazy-grid__box
+        .lazy-grid__row(data-lazy-box)
+          h3.title.title--h3.title--right Conduct testing
+        .lazy-grid__box(data-lazy-box)
+        .lazy-grid__box
+        .lazy-grid__box
+        .lazy-grid__box
+
+
+
+block modals

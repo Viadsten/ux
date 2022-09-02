@@ -1,0 +1,17 @@
+.title {
+  margin: 0;
+
+  font-family: serif;
+  color: rgb(230, 225, 220);
+  font-weight: 400;
+  text-transform: uppercase;
+
+  &--h3 {
+    font-size: 42px;
+    line-height: 46px;
+  }
+
+  &--right {
+    text-align: end;
+  }
+}
