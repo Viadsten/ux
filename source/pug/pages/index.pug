@@ -11,36 +11,17 @@ block variables
 
 block main
   main
-    .container(data-scroll-section)
-      .lazy-grid
-        .lazy-grid__box
-        .lazy-grid__box(data-lazy-box="start")
-        .lazy-grid__box
-        .lazy-grid__box
-        .lazy-grid__row
-          h3.title.title--h3 Determine the goal
-        .lazy-grid__box
-        .lazy-grid__box
-        .lazy-grid__box
-        .lazy-grid__box(data-lazy-box)
-        .lazy-grid__row
-          h3.title.title--h3.title--right Choose the appropriate<br>testing method
-        .lazy-grid__box(data-lazy-box)
-        .lazy-grid__box
-        .lazy-grid__box
-        .lazy-grid__box
-        .lazy-grid__row
-          h3.title.title--h3 Formulate tasks for users
-        .lazy-grid__box
-        .lazy-grid__box
-        .lazy-grid__box
-        .lazy-grid__box
-        .lazy-grid__row(data-lazy-box)
-          h3.title.title--h3.title--right Conduct testing
-        .lazy-grid__box(data-lazy-box)
-        .lazy-grid__box
-        .lazy-grid__box
-        .lazy-grid__box
+    +steps()
+    +ux-parallax-block()
+
+
+
+    .scroll-section.scroll-section--horizontal(data-scroll-section="horizontal")
+      .scroll-section__wrapper
+        .scroll-section__container
+          .container
+            .section
+
 
 
 

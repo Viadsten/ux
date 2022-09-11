@@ -1,0 +1,12 @@
+.ux-parallax-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  svg {
+    width: size(1312px);
+    height: size(929px);
+    max-height: 80vh;
+  }
+}

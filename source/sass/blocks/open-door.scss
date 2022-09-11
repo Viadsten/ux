@@ -1,0 +1,26 @@
+.open-door {
+  position: relative;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-color: $color-white-bg;
+
+  &__inner {
+
+  }
+
+  &__svg {
+    svg {
+      position: absolute;
+      bottom: 0;
+      left: $pd-container-lg;
+      height: calc(100vh - #{size(200px)});
+      width: auto;
+      perspective: 800px;
+    }
+
+    #path-door {
+      transform-style: preserve-3d;
+    }
+  }
+}

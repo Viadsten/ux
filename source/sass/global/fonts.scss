@@ -11,11 +11,33 @@
 
 @font-face {
   font-style: normal;
-  font-weight: 400;
-  font-family: "";
+  font-weight: 300;
+  font-family: "Mukta";
 
   font-display: swap;
   src:
-    url("../fonts/.woff2") format("woff2"),
-    url("../fonts/.woff") format("woff");
+    url("../fonts/Mukta-Light.woff2") format("woff2"),
+    url("../fonts/Mukta-Light.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Mukta";
+
+  font-display: swap;
+  src:
+    url("../fonts/Mukta-Regular.woff2") format("woff2"),
+    url("../fonts/Mukta-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Iceberg";
+
+  font-display: swap;
+  src:
+    url("../fonts/Iceberg-Regular.woff2") format("woff2"),
+    url("../fonts/Iceberg-Regular.woff") format("woff");
 }

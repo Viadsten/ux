@@ -4,6 +4,11 @@ import {initCustomSelect} from './modules/form/init-custom-select';
 import {initFormValidate} from './modules/form/init-form-validate';
 import {ScrollTrigger} from './vendor/ScrollTrigger';
 import { initLocoScroll } from './modules/init-locomotive';
+import { initScrollTriggerLs } from './modules/init-scrollTrigger';
+import { initAnimations } from './modules/animations';
+import { initMouseSvgParallax } from './modules/animations/mouse-parallax';
+import { OpenDoorAnimation } from './modules/animations/open-door';
+
 
 // ---------------------------------
 
@@ -26,6 +31,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     gsap.registerPlugin(ScrollTrigger);
     initLocoScroll();
+    initScrollTriggerLs();
+    initAnimations();
+    initMouseSvgParallax();
+    new OpenDoorAnimation();
   });
 });
 

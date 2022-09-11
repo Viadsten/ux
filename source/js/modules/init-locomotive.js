@@ -14,6 +14,7 @@ const initLocoScroll = () => {
   scroll = new window.LocomotiveScroll({
     el,
     smooth: true,
+    lerp: 0.06,
     getDirection: true,
   });
 

@@ -1,0 +1,12 @@
+.cursor {
+  position: fixed;
+  top: -20px;
+  left: -20px;
+  // transform: 3d(-50%, -50%, 0);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+
+  mix-blend-mode: exclusion;
+}

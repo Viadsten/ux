@@ -1,16 +1,67 @@
-.lazy-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 30px;
+.steps {
+  // margin-top: size(600px);
+  margin-bottom: size(150px);
+  min-height: 150vh;
+
+  &__heading {
+    margin-bottom: 100vh;
+    position: relative;
+    min-height: 100vh;
+    // background-color: $color-white-bg;
+
+    &-sticky {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: size(30px);
+  }
 
   &__box {
     width: 100%;
-    height: 21vw;
-    background-color: rgb(230, 225, 220);
+    height: calc((100vw - #{size(157px)}) / 4);
+    background-color: $color-white-bg;
+
+    &--hidden {
+      opacity: 0;
+    }
   }
 
   &__row {
     grid-column-start: 1;
     grid-column-end: 5;
+  }
+}
+
+[data-step-box="start"] {
+
+}
+
+[data-step-box="rotating"] {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  margin-left: size(-$pd-container-xlg);
+
+  @include vp-1439 {
+    margin-left: size(-$pd-container-lg);
+  }
+
+  @include vp-1023 {
+    margin-left: size(-$pd-container-md);
+  }
+
+  @include vp-767 {
+    margin-left: size(-$pd-container-sm);
   }
 }

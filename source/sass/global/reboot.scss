@@ -27,11 +27,19 @@ html {
   // https://transfonter.org/ - включите настройку https://prnt.sc/12rnt6g и переконвертируйте шрифт
 }
 
+html {
+  font-size: size($fz-default);
+
+  @include vp-1439 {
+    font-size: $fz-default;
+  }
+}
+
 body {
   width: 100%;
   height: 100%;
 
-  background-color: $color-default-white;
+  background-color: $color-default-black;
 }
 
 a {
