@@ -1,12 +1,25 @@
 .cursor {
   position: fixed;
+  z-index: 100;
   top: -20px;
   left: -20px;
   // transform: 3d(-50%, -50%, 0);
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background-color: #ffffff;
+  background-color: transparent;
 
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+  }
   mix-blend-mode: exclusion;
+  pointer-events: none;
 }

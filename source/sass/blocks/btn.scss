@@ -1,13 +1,24 @@
 .btn {
-  display: inline-flex;
-  margin: 10px 0;
-  padding: 10px 20px;
+  top: 200px;
+  left: 200px;
+  // 
+  position: relative;
+  z-index: 1;
 
-  color: $color-default-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin: 10px 0;
+  width: size(100px);
+  height: size(100px);
+  // padding: 10px 20px;
 
-  background-color: $color-neon-blue;
+  color: $color-default-black;
+
+  background-color: $color-white-bg;
   border: none;
   cursor: pointer;
+  border-radius: 50%;
 
   transition: opacity $trans-default;
 
@@ -19,6 +30,12 @@
     opacity: 0.5;
 
     pointer-events: none;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
   }
 
   @media (hover: hover), screen and (min-width: 0\0) {
