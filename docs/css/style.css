@@ -907,15 +907,26 @@ button,
 }
 
 .btn {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  margin: 10px 0;
-  padding: 10px 20px;
-  color: #ffffff;
-  background-color: #2c39f2;
+  top: 200px;
+  left: 200px;
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 6.25rem;
+  height: 6.25rem;
+  color: #202020;
+  background-color: #e6e1dc;
   border: none;
   cursor: pointer;
+  border-radius: 50%;
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
@@ -928,6 +939,12 @@ button,
 .btn:disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+
+.btn__text {
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
 }
 
 .custom-input,
@@ -1386,6 +1403,7 @@ button,
 }
 
 .steps {
+  margin-top: 550px;
   margin-bottom: 9.375rem;
   min-height: 150vh;
 }
@@ -1481,13 +1499,26 @@ button,
 
 .cursor {
   position: fixed;
+  z-index: 100;
   top: -20px;
   left: -20px;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background-color: #ffffff;
+  background-color: transparent;
   mix-blend-mode: exclusion;
+  pointer-events: none;
+}
+
+.cursor__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
 }
 
 .open-door {
