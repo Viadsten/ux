@@ -907,8 +907,6 @@ button,
 }
 
 .btn {
-  top: 200px;
-  left: 200px;
   position: relative;
   z-index: 1;
   display: -webkit-box;
@@ -920,11 +918,11 @@ button,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 6.25rem;
-  height: 6.25rem;
-  color: #202020;
-  background-color: #e6e1dc;
-  border: none;
+  width: 12.5rem;
+  height: 12.5rem;
+  border: 2px solid #e6e1dc;
+  color: #e6e1dc;
+  background-color: #202020;
   cursor: pointer;
   border-radius: 50%;
   -webkit-transition: opacity 0.3s ease;
@@ -942,8 +940,8 @@ button,
 }
 
 .btn__text {
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
   text-align: center;
 }
 
@@ -1403,9 +1401,11 @@ button,
 }
 
 .steps {
-  margin-top: 550px;
   margin-bottom: 9.375rem;
+  marker-end: -50vh;
+  padding-top: 50vh;
   min-height: 150vh;
+  overflow: hidden;
 }
 
 .steps__heading {
@@ -1521,6 +1521,16 @@ button,
   background-color: #fff;
 }
 
+.cursor .pulse-ring {
+  position: absolute;
+  background-color: inherit;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  opacity: 0.8;
+}
+
 .open-door {
   position: relative;
   height: 100vh;
@@ -1544,6 +1554,20 @@ button,
   transform-style: preserve-3d;
 }
 
+.click-section {
+  min-height: 100vh;
+  max-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 /* @media (hover: hover), screen and (min-width: 0\0) {
   &:hover,
   &:focus {
@@ -1552,11 +1576,6 @@ button,
 } */
 
 @media (hover: hover), screen and (min-width: 0\0) {
-  .btn:hover,
-  .btn:focus {
-    opacity: 0.8;
-  }
-
   .custom-select__item[aria-selected="true"]:hover,
   .custom-select__item[aria-selected="true"]:focus {
     background-color: rgba(255, 255, 255, 0.2);
@@ -1587,8 +1606,17 @@ button,
     padding: 0 1.5rem;
   }
 
+  .steps {
+    margin-top: 0;
+  }
+
   [data-step-box="rotating"] {
     margin-left: -1.5rem;
+    bottom: calc(50vh - 50vw);
+  }
+
+  .click-section {
+    display: none;
   }
 }
 
@@ -1612,5 +1640,11 @@ button,
 
   [data-step-box="rotating"] {
     margin-left: -1rem;
+  }
+}
+
+@media screen and (pointer: coarse) {
+  .cursor {
+    display: none;
   }
 }
