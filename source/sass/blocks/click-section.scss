@@ -1,0 +1,12 @@
+.click-section {
+  min-height: 100vh;
+  max-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include vp-1023 {
+    display: none;
+  }
+}

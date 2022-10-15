@@ -1,7 +1,4 @@
 .btn {
-  top: 200px;
-  left: 200px;
-  // 
   position: relative;
   z-index: 1;
 
@@ -9,14 +6,15 @@
   justify-content: center;
   align-items: center;
   // margin: 10px 0;
-  width: size(100px);
-  height: size(100px);
+  width: size(200px);
+  height: size(200px);
+
+  border: 2px solid $color-white-bg;
   // padding: 10px 20px;
 
-  color: $color-default-black;
+  color: $color-white-bg;
 
-  background-color: $color-white-bg;
-  border: none;
+  background-color: $color-default-black;
   cursor: pointer;
   border-radius: 50%;
 
@@ -33,15 +31,8 @@
   }
 
   &__text {
-    font-size: 18px;
-    line-height: 18px;
+    font-size: size(28px);
+    line-height: size(28px);
     text-align: center;
-  }
-
-  @media (hover: hover), screen and (min-width: 0\0) {
-    &:hover,
-    &:focus {
-      opacity: 0.8;
-    }
   }
 }

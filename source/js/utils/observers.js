@@ -1,3 +1,6 @@
+import { scrollTrigger } from "../modules/init-scrollTrigger";
+import ScrollTrigger from "../vendor/ScrollTrigger";
+
 class EventObserver {
   constructor() {
     this.observers = [];
@@ -28,7 +31,23 @@ document.addEventListener('click', (e) => clickObserver.fire(e));
 // clickObserver.subscribe((data) => {
 //   console.log('sub 1:', data);
 // });
-
 export {clickObserver};
 
 
+let scrollObserver;
+export const initScrollObserver = () => {
+  scrollObserver = new EventObserver();
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: '[data-scroll-container]',
+      scroller: '[data-scroll-container]',
+      start: 'top',
+      end: 'bottom',
+      scrub: true,
+      onUpdate: (self) => {
+        scrollObserver.fire(self);
+      },
+    },
+  });
+};
+export {scrollObserver};

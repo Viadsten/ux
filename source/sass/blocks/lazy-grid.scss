@@ -1,8 +1,14 @@
 .steps {
   // margin-top: size(600px);
-  margin-top: 550px;
   margin-bottom: size(150px);
+  marker-end: -50vh;
+  padding-top: 50vh;
   min-height: 150vh;
+  overflow: hidden;
+
+  @include vp-1023 {
+    margin-top: 0;
+  }
 
   &__heading {
     margin-bottom: 100vh;
@@ -60,6 +66,7 @@
 
   @include vp-1023 {
     margin-left: size(-$pd-container-md);
+    bottom: calc(50vh - 50vw);
   }
 
   @include vp-767 {

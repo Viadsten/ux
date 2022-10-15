@@ -2,6 +2,8 @@
 //   constructor() {
 //     this.container = document.querySelector('[data-scroll-container]');
 
+import { scrollObserver } from "../../utils/observers";
+
 //     if (!this.container) {
 //       return;
 //     }
@@ -66,6 +68,7 @@ export class Cursor {
     // this.arrowTimeline = gsap.to('.cursor-lazy svg', {rotateY: 180, paused: true, duration: 0.35, ease: 'Power1.out'});
     this.sliderInView = false;
     this.clickIsPlaying = false;
+    this.circleBtnInView = false;
 
     this.breakpointChecker = this.breakpointChecker.bind(this);
     this.setListeners = this.setListeners.bind(this);
@@ -87,7 +90,8 @@ export class Cursor {
   cursorTemplate() {
     return (
       `<div class="cursor">
-        <span class="cursor__content"></span>
+        <span class="cursor__content">
+        </span>
       </div>`
     );
   }
@@ -99,11 +103,14 @@ export class Cursor {
       return;
     }
 
-    const btnCircle = evt.target.closest('[data-cursor-btn="circle"]');
+    const btnCircle = this.evt.target.closest('[data-cursor-btn="circle"]');
     if (btnCircle) {
       const btnRect = btnCircle.getBoundingClientRect();
       const cursorRect = this.cursor.getBoundingClientRect();
-      gsap.to(this.cursorContent, {scale: ((btnRect.width / cursorRect.width).toFixed(2) - 0.2), duration: 0.6, ease: 'Power1.out'});
+      if (!this.circleBtnInView) {
+        gsap.to(this.cursorContent, {scale: ((btnRect.width / cursorRect.width).toFixed(2)), duration: 0.4, ease: 'Power1.out'});
+        this.circleBtnInView = true;
+      }
 
       const pos = {
         x: (btnRect.left + btnRect.width / 2),
@@ -113,7 +120,11 @@ export class Cursor {
       this.mouse.x = pos.x;
       this.mouse.y = pos.y;
     } else {
-      gsap.to(this.cursorContent, {scale: 1, duration: 0.6, ease: 'Power1.out'});
+      if (this.circleBtnInView) {
+        gsap.to(this.cursorContent, {scale: 1, duration: 0.6, ease: 'Power3.out'});
+        this.circleBtnInView = false;
+      }
+
       this.mouse.x = this.evt.clientX;
       this.mouse.y = this.evt.clientY;
     }
@@ -194,7 +205,7 @@ export class Cursor {
     this.pos.y += (this.mouse.y - this.pos.y) * this.ease;
 
     gsap.to(this.cursor, {
-      duration: 0.35,
+      duration: this.circleBtnInView ? 0.1 : 0.35,
       ease: 'Power2.inOut',
       x: this.pos.x,
       y: this.pos.y,
@@ -228,7 +239,7 @@ export class Cursor {
     gsap.ticker.remove(this.updatePosition);
     document.removeEventListener('mousemove', this.handlerMouseMove);
     window.removeEventListener('click', this.clickCursorAnimation);
-    window.removeEventListener('wheel', this.hideCursor);
+    scrollObserver.unsubscribe(() => this.handlerMouseMove());
   }
 
   setListeners() {
@@ -236,7 +247,7 @@ export class Cursor {
     gsap.ticker.add(this.updatePosition);
     document.addEventListener('mousemove', this.handlerMouseMove);
     window.addEventListener('click', this.clickCursorAnimation);
-    window.addEventListener('wheel', this.hideCursor);
+    scrollObserver.subscribe(() => this.handlerMouseMove());
   }
 
   breakpointChecker() {
@@ -253,8 +264,11 @@ export class Cursor {
 
   init() {
     this.renderCursor();
+
     this.cursor = this.container.querySelector('.cursor');
     this.cursorContent = this.cursor.querySelector('.cursor__content');
+    this.cursorRings = this.cursor.querySelectorAll('.pulse-ring');
+
     this.breakpointChecker();
     this.mediaTouchDevice.addListener(this.breakpointChecker);
   }
