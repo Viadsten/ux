@@ -8,6 +8,7 @@ import { initScrollTriggerLs } from './modules/init-scrollTrigger';
 import { initAnimations } from './modules/animations';
 import { initMouseSvgParallax } from './modules/animations/mouse-parallax';
 import { OpenDoorAnimation } from './modules/animations/open-door';
+import './utils/observers';
 
 
 // ---------------------------------
