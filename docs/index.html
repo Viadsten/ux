@@ -12,12 +12,22 @@
     <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-close" viewBox="0 0 20 20"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></symbol></svg></div>
     <div class="wrapper" data-scroll-container>
       <main>
-        <div class="click-section" data-scroll-section>
-          <div class="btn" data-cursor-btn="circle">
-            <div class="btn__text">click</div>
+        <div class="slide-grid" data-scroll-section>
+          <div class="sticky-loco" id="slide-grid-sticky"></div>
+          <div class="slide-grid__list" data-scroll-sticky data-scroll data-scroll-target="#slide-grid-sticky">
+            <div class="slide-grid__item"><span class="slide-grid__item-bg"></span></div>
+            <div class="slide-grid__item"><span class="slide-grid__item-bg"></span><span class="slide-grid__text slide-grid__text--right-3 title title--right title--h3">Frontend</span></div>
+            <div class="slide-grid__item"><span class="slide-grid__item-bg"></span><span class="slide-grid__text slide-grid__text--right title title--right title--h3">animation</span></div>
+            <div class="slide-grid__item"><span class="slide-grid__text"></span><span class="slide-grid__item-bg"></span></div>
+            <div class="slide-grid__item"><span class="slide-grid__text"></span><span class="slide-grid__item-bg"></span></div>
+            <div class="slide-grid__item"><span class="slide-grid__text"></span><span class="slide-grid__item-bg"></span></div>
+            <div class="slide-grid__item"><span class="slide-grid__text"></span><span class="slide-grid__item-bg"></span></div>
+            <div class="slide-grid__item"><span class="slide-grid__item-bg"></span><span class="slide-grid__text title title--h2">vladislav</span></div>
+            <div class="slide-grid__item slide-grid__item--last"><span class="slide-grid__item-bg"></span><span class="slide-grid__text title title--h2">stanulevich</span></div>
+            <div class="slide-grid__item"><span class="slide-grid__item-bg"></span></div>
           </div>
         </div>
-        <section class="steps" data-scroll-section="lazy-grid">
+        <section class="steps" data-scroll-section="lazy-grid" style="margin-top: -100vh;">
           <div class="container">
             <div class="steps__heading">
               <h2 class="title title--h2 title--black">Ux testing steps</h2>
@@ -69,6 +79,11 @@
 <path fill-rule="evenodd" clip-rule="evenodd" d="M554.025 624.269H487.779V574.979L437.756 624.269H320.811L262 566.319V164H328.922V566.319H487.779V164H554.025V624.269ZM950.86 624.269H883.938V513.032L806.199 402.461H798.088L725.081 513.032V624.269H658.835V497.046L758.88 357.167L658.835 223.948V164H725.081V209.96L803.495 319.199H811.607L883.938 209.96V164H950.86V223.948L851.49 357.167L950.184 497.046L950.86 624.269ZM452.225 505.369C452.225 538.873 424.661 566.033 390.66 566.033C356.658 566.033 329.095 538.873 329.095 505.369C329.095 471.865 356.658 444.705 390.66 444.705C424.661 444.705 452.225 471.865 452.225 505.369ZM915.81 691C934.511 691 949.671 676.062 949.671 657.635C949.671 639.208 934.511 624.27 915.81 624.27C897.109 624.27 881.949 639.208 881.949 657.635C881.949 676.062 897.109 691 915.81 691Z" fill="#F1F1F1"/>
 </svg>
         </section>
+        <div class="click-section" data-scroll-section>
+          <div class="btn" data-cursor-btn="circle">
+            <div class="btn__text">click</div>
+          </div>
+        </div>
         <div class="scroll-section scroll-section--horizontal" data-scroll-section="horizontal">
           <div class="scroll-section__wrapper">
             <div class="scroll-section__container">
