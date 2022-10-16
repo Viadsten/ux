@@ -9,7 +9,7 @@ import { initAnimations } from './modules/animations';
 import { initMouseSvgParallax } from './modules/animations/mouse-parallax';
 import { OpenDoorAnimation } from './modules/animations/open-door';
 // import './utils/observers';
-import { initScrollObserver } from './utils/observers';
+import { initScrollObserver, resizeObserver } from './utils/observers';
 
 
 // ---------------------------------
@@ -39,6 +39,9 @@ window.addEventListener('DOMContentLoaded', () => {
     initAnimations();
     initMouseSvgParallax();
     new OpenDoorAnimation();
+
+    // loaded
+    resizeObserver.fire('pageLoad');
   });
 });
 

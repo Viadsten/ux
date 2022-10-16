@@ -1,15 +1,31 @@
 .title {
   margin: 0;
 
-  font-family: serif;
-  color: rgb(230, 225, 220);
-  font-weight: 400;
+  font-family: 'neuemachina-regular';
+  font-size: size(65px);
+  line-height: size(65px);
+  display: inline;
   text-transform: uppercase;
+  text-align: left;
+  font-weight: 400;
+  color: $color-white-bg;
+
+  &--h2 {
+    font-size: size(55px);
+    line-height: size(55px);
+  }
 
   &--h3 {
-    font-size: 42px;
-    line-height: 46px;
+    font-size: size(45px);
+    line-height: size(45px);
   }
+
+  &--h4 {
+    font-size: size(35px);
+    line-height: size(35px);
+  }
+
+
 
   &--right {
     text-align: end;

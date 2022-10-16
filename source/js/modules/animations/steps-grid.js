@@ -43,7 +43,7 @@ export class StepsGrid {
         scroller: '[data-scroll-container]',
         start: 'bottom 90%',
         end: 'bottom -40%',
-        scrub: 1,
+        scrub: true,
       },
     });
 

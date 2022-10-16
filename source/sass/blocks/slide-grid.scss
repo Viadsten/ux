@@ -1,0 +1,81 @@
+.slide-grid {
+  position: relative;
+  z-index: 2;
+  min-height: 200vh;
+  height: 200vh;
+  max-height: 200vh;
+
+  background-color: $color-white-bg;
+
+
+  &__list {
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 100vh;
+    min-height: 100vh;
+  }
+
+  &__item {
+    position: relative;
+    perspective: 500px;
+    width: 100%;
+    height: 100%;
+
+    &--last {
+      .title {
+        left: calc(#{$pd-container-xlg} * 2);
+        bottom: -10%;
+      }
+    }
+  }
+
+  &__item-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-default-black;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 101%;
+      height: 101%;
+      background-color: $color-default-black;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    // top: 0;
+    bottom: 0;
+    left: $pd-container-xlg;
+    font-family: 'neuemachina-regular';
+    font-size: size(40px);
+    line-height: size(40px);
+    display: inline;
+    text-transform: uppercase;
+    color: $color-white-bg;
+
+    &--right {
+      right: $pd-container-xlg;
+    }
+
+    &--right-3 {
+      right: calc(#{$pd-container-xlg} * 3);
+    }
+  }
+}

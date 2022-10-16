@@ -16,7 +16,11 @@ const initLocoScroll = () => {
     smooth: true,
     lerp: 0.06,
     getDirection: true,
+    tablet: {
+      breakpoint: 1023,    // <---- Fixes The Issue 🎉
+    }
   });
+  console.log(scroll);
 
   const ro = new ResizeObserver(() => {
     scroll.update();

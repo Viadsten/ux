@@ -10,6 +10,11 @@
     margin-top: 0;
   }
 
+  .title {
+    width: 100%;
+    display: inline-block;
+  }
+
   &__heading {
     margin-bottom: 100vh;
     position: relative;
@@ -66,7 +71,7 @@
 
   @include vp-1023 {
     margin-left: size(-$pd-container-md);
-    bottom: calc(50vh - 50vw);
+    bottom: 70vh;
   }
 
   @include vp-767 {
