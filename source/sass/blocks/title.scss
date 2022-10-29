@@ -2,17 +2,27 @@
   margin: 0;
 
   font-family: 'neuemachina-regular';
-  font-size: size(65px);
-  line-height: size(65px);
+  font-size: size(85px);
+  line-height: size(85px);
   display: inline;
   text-transform: uppercase;
   text-align: left;
   font-weight: 400;
   color: $color-white-bg;
 
+  @include vp-1439 {
+    // font-size: size(75px);
+    // line-height: size(75px);
+  }
+
   &--h2 {
-    font-size: size(55px);
-    line-height: size(55px);
+    font-size: size(70px);
+    line-height: size(70px);
+
+    @include vp-1439 {
+      font-size: size(70px);
+      line-height: size(70px);
+    }
   }
 
   &--h3 {

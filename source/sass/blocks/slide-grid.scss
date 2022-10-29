@@ -7,6 +7,12 @@
 
   background-color: $color-white-bg;
 
+  &__title-smooth {
+    position: absolute;
+    left: calc(#{$pd-container-xlg} * 4);
+    top: 150vh;
+    // bottom: 50vh;
+  }
 
   &__list {
     position: sticky;
@@ -30,6 +36,7 @@
     &--last {
       .title {
         left: calc(#{$pd-container-xlg} * 2);
+        top: unset;
         bottom: -10%;
       }
     }
@@ -60,8 +67,8 @@
 
   &__text {
     position: absolute;
-    // top: 0;
-    bottom: 0;
+    top: -5%;
+    // bottom: 0;
     left: $pd-container-xlg;
     font-family: 'neuemachina-regular';
     font-size: size(40px);
@@ -76,6 +83,30 @@
 
     &--right-3 {
       right: calc(#{$pd-container-xlg} * 3);
+    }
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    mix-blend-mode: exclusion;
+    height: 100%;
+    opacity: 1;
+    filter: grayscale(1);
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }

@@ -28,11 +28,25 @@ html {
 }
 
 html {
-  font-size: size($fz-default);
+  // font-size: size($fz-default);
+  font-size: 1vw;
 
   @include vp-1439 {
-    font-size: $fz-default;
+    font-size: 1.05vw;
   }
+
+  @include vp-1023 {
+    font-size: 1.2vw;
+  }
+
+  @include vp-767 {
+    font-size: 1.76667vw;
+
+  }
+
+  // @include vp-1439 {
+  //   font-size: $fz-default;
+  // }
 }
 
 body {
