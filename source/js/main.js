@@ -6,8 +6,6 @@ import {ScrollTrigger} from './vendor/ScrollTrigger';
 import { initLocoScroll } from './modules/init-locomotive';
 import { initScrollTriggerLs } from './modules/init-scrollTrigger';
 import { initAnimations } from './modules/animations';
-import { initMouseSvgParallax } from './modules/animations/mouse-parallax';
-import { OpenDoorAnimation } from './modules/animations/open-door';
 // import './utils/observers';
 import { initScrollObserver, resizeObserver } from './utils/observers';
 
@@ -31,14 +29,14 @@ window.addEventListener('DOMContentLoaded', () => {
     initCustomSelect();
     initFormValidate();
 
+    // scroll modules
     gsap.registerPlugin(ScrollTrigger);
     initLocoScroll();
     initScrollTriggerLs();
     initScrollObserver();
+    // -------------------
 
     initAnimations();
-    initMouseSvgParallax();
-    new OpenDoorAnimation();
 
     // loaded
     resizeObserver.fire('pageLoad');

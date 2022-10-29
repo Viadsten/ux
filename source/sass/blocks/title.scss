@@ -41,7 +41,15 @@
     text-align: end;
   }
 
+  &--white {
+    color: $color-default-white;
+  }
+
+  &--wheat {
+    color: $color-wheat;
+  }
+
   &--black {
-    color: #202020;
+    color: $color-default-black;
   }
 }

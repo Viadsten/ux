@@ -1,5 +1,4 @@
 import {resizeObserver} from '../../utils/observers';
-import {scrollTrigger} from '../init-scrollTrigger';
 
 export class StepsGrid {
   constructor() {

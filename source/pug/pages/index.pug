@@ -11,48 +11,16 @@ block variables
 
 block main
   main
-    .slide-grid(data-scroll-section)
-      .sticky-loco#slide-grid-sticky
-      .slide-grid__list(data-scroll-sticky, data-scroll, data-scroll-target="#slide-grid-sticky")
-        .slide-grid__item
-          span.slide-grid__item-bg
-        .slide-grid__item
-          span.slide-grid__item-bg
-          span.slide-grid__text.slide-grid__text--right-3.title.title--right.title--h2 frontend
-        .slide-grid__item
-          span.slide-grid__item-bg
-          span.slide-grid__text.slide-grid__text--right.title.title--right.title--h2 developer
-        .slide-grid__item
-          span.slide-grid__text
-          span.slide-grid__item-bg
-        .slide-grid__item
-          span.slide-grid__text
-          span.slide-grid__item-bg
-        .slide-grid__item
-          span.slide-grid__text
-          span.slide-grid__item-bg
-        .slide-grid__item
-          span.slide-grid__text
-          span.slide-grid__item-bg
-        .slide-grid__item
-          span.slide-grid__item-bg
-          span.slide-grid__text.title.title--h1 vladislav
-        .slide-grid__item.slide-grid__item--last
-          span.slide-grid__item-bg
-          span.slide-grid__text.title.title--h1 stanulevich
-        .slide-grid__item
-          span.slide-grid__item-bg
-        //- .slide-grid__video
-        //-   video(src="./video-2.mp4", muted, autoplay, loop)
-      .slide-grid__title-smooth.title.title--black split it
-
+    .section.section--full.section--bg-white(data-scroll-section, data-section-bg)
+      .section__bg
+      .section__body
+        h1.title.section__center-title.title--wheat(data-splitting="wave") ПРОДАЮЩИЙ ТЕКСТ
+    +slide-grid()
     +steps()(style="margin-top: -100vh;")
     +ux-parallax-block()
     .click-section(data-scroll-section)
       .btn(data-cursor-btn="circle")
         .btn__text click
-
-
 
     .scroll-section.scroll-section--horizontal(data-scroll-section="horizontal")
       .scroll-section__wrapper

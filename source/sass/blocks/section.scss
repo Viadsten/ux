@@ -1,0 +1,40 @@
+.section {
+  $root: &;
+  margin: -1px 0;
+  padding: 400px 0;
+  overflow: hidden;
+  position: relative;
+  background-color: $color-default-black;
+
+  &__body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__center-title {
+    margin: auto;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 25%;
+    bottom: 0;
+    left: -15%;
+    width: 150%;
+    height: 50%;
+  }
+
+  &--bg-white {
+    #{$root}__bg {
+      background-color: $color-white-bg;
+    }
+  }
+
+  &--full {
+    min-height: 100vh;
+  }
+}

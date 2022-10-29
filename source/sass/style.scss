@@ -2,6 +2,7 @@
 // ---------------------------------
 
 @import "vendor/normalize";
+@import "vendor/splitting";
 @import "vendor/locomotive-scroll";
 // Swiper 7.4.1
 // @import "vendor/swiper";
@@ -33,6 +34,7 @@
 @import "blocks/title";
 @import "blocks/ux-parallax-block";
 @import "blocks/cursor";
+@import "blocks/section";
 @import "blocks/open-door";
 @import "blocks/click-section";
 
