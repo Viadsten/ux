@@ -384,6 +384,74 @@ template {
   display: none;
 }
 
+/* Recommended styles for Splitting */
+
+.splitting .word,
+.splitting .char {
+  display: inline-block;
+}
+
+/* Psuedo-element chars */
+
+.splitting .char {
+  position: relative;
+}
+
+/**
+ * Populate the psuedo elements with the character to allow for expanded effects
+ * Set to `display: none` by default; just add `display: block` when you want
+ * to use the psuedo elements
+ */
+
+.splitting .char::before,
+.splitting .char::after {
+  content: attr(data-char);
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  transition: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Expanded CSS Variables */
+
+.splitting {
+  /* The center word index */
+  --word-center: calc((var(--word-total) - 1) / 2);
+  /* The center character index */
+  --char-center: calc((var(--char-total) - 1) / 2);
+  /* The center character index */
+  --line-center: calc((var(--line-total) - 1) / 2);
+}
+
+.splitting .word {
+  /* Pecent (0-1) of the word's position */
+  --word-percent: calc(var(--word-index) / var(--word-total));
+  /* Pecent (0-1) of the line's position */
+  --line-percent: calc(var(--line-index) / var(--line-total));
+}
+
+.splitting .char {
+  /* Percent (0-1) of the char's position */
+  --char-percent: calc(var(--char-index) / var(--char-total));
+  /* Offset from center, positive & negative */
+  --char-offset: calc(var(--char-index) - var(--char-center));
+  /* Absolute distance from center, only positive */
+  --distance: calc(
+     (var(--char-offset) * var(--char-offset)) / var(--char-center)
+  );
+  /* Distance from center where -1 is the far left, 0 is center, 1 is far right */
+  --distance-sine: calc(var(--char-offset) / var(--char-center));
+  /* Distance from center where 1 is far left/far right, 0 is center */
+  --distance-percent: calc((var(--distance) / var(--char-center)));
+}
+
 /* stylelint-disable */
 
 /*! locomotive-scroll v4.0.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
@@ -567,7 +635,7 @@ html {
 }
 
 html {
-  font-size: 1rem;
+  font-size: 1vw;
 }
 
 body {
@@ -973,6 +1041,12 @@ button,
   background-color: #e6e1dc;
 }
 
+.slide-grid__title-smooth {
+  position: absolute;
+  left: calc(60px * 4);
+  top: 150vh;
+}
+
 .slide-grid__list {
   position: sticky;
   top: 0;
@@ -1000,6 +1074,7 @@ button,
 
 .slide-grid__item--last .title {
   left: calc(60px * 2);
+  top: unset;
   bottom: -10%;
 }
 
@@ -1028,7 +1103,7 @@ button,
 
 .slide-grid__text {
   position: absolute;
-  bottom: 0;
+  top: -5%;
   left: 60px;
   font-family: 'neuemachina-regular';
   font-size: 2.5rem;
@@ -1044,6 +1119,32 @@ button,
 
 .slide-grid__text--right-3 {
   right: calc(60px * 3);
+}
+
+.slide-grid__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  mix-blend-mode: exclusion;
+  height: 100%;
+  opacity: 1;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.slide-grid__video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .custom-input,
@@ -1566,8 +1667,8 @@ button,
 .title {
   margin: 0;
   font-family: 'neuemachina-regular';
-  font-size: 4.0625rem;
-  line-height: 4.0625rem;
+  font-size: 5.3125rem;
+  line-height: 5.3125rem;
   display: inline;
   text-transform: uppercase;
   text-align: left;
@@ -1576,8 +1677,8 @@ button,
 }
 
 .title--h2 {
-  font-size: 3.4375rem;
-  line-height: 3.4375rem;
+  font-size: 4.375rem;
+  line-height: 4.375rem;
 }
 
 .title--h3 {
@@ -1592,6 +1693,14 @@ button,
 
 .title--right {
   text-align: end;
+}
+
+.title--white {
+  color: #ffffff;
+}
+
+.title--wheat {
+  color: #c0b9b2;
 }
 
 .title--black {
@@ -1649,6 +1758,46 @@ button,
   width: 100%;
   border-radius: 100%;
   opacity: 0.8;
+}
+
+.section {
+  margin: -1px 0;
+  padding: 400px 0;
+  overflow: hidden;
+  position: relative;
+  background-color: #202020;
+}
+
+.section__body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.section__center-title {
+  margin: auto;
+}
+
+.section__bg {
+  position: absolute;
+  top: 25%;
+  bottom: 0;
+  left: -15%;
+  width: 150%;
+  height: 50%;
+}
+
+.section--bg-white .section__bg {
+  background-color: #e6e1dc;
+}
+
+.section--full {
+  min-height: 100vh;
 }
 
 .open-door {
@@ -1709,7 +1858,7 @@ button,
 
 @media (max-width: 1439px) {
   html {
-    font-size: 16px;
+    font-size: 1.05vw;
   }
 
   .container {
@@ -1719,9 +1868,18 @@ button,
   [data-step-box="rotating"] {
     margin-left: -2.5rem;
   }
+
+  .title--h2 {
+    font-size: 4.375rem;
+    line-height: 4.375rem;
+  }
 }
 
 @media (max-width: 1023px) {
+  html {
+    font-size: 1.2vw;
+  }
+
   .container {
     padding: 0 1.5rem;
   }
@@ -1741,6 +1899,10 @@ button,
 }
 
 @media (max-width: 767px) {
+  html {
+    font-size: 1.76667vw;
+  }
+
   .container {
     padding: 0 1rem;
   }
